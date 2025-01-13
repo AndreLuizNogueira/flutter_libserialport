@@ -5,6 +5,7 @@
 Atualizado Pacotes;
 Atualizado MinSdk de 16 para 23 e Target de 34 para 35;
 Atualizado Flutter para 3.27;
+Corrigido App Exemplo e Atualizado Jdk, Kotlin e Gradle;
 
 ## 0.5.0
 
