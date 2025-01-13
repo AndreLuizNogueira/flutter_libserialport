@@ -1,3 +1,11 @@
+# Alterações
+
+## 0.5.1
+
+Atualizado Pacotes;
+Atualizado MinSdk de 16 para 23 e Target de 34 para 35;
+Atualizado Flutter para 3.27;
+
 ## 0.5.0
 
 * Add namespace for Android
