@@ -1,5 +1,5 @@
 group 'org.sigrok.flutter_libserialport'
-version '0.5.1-SNAPSHOT'
+version '0.5.2-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '2.0.0'

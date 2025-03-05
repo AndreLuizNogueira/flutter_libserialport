@@ -1,5 +1,9 @@
 # Alterações
 
+## 0.5.2
+
+Removido import io.flutter.plugin.common.PluginRegistry.Registrar para Corrigir Erro De Build;
+
 ## 0.5.1
 
 Atualizado Pacotes;
