@@ -1,7 +1,7 @@
 name: flutter_libserialport
 description: A simple wrapper around libserialport utilizing Flutter's
   build system to build and deploy the C-library for the target platform.
-version: 0.5.2
+version: 0.5.3
 homepage: https://github.com/jpnurmi/flutter_libserialport
 repository: https://github.com/jpnurmi/flutter_libserialport
 issue_tracker: https://github.com/jpnurmi/flutter_libserialport/issues
@@ -13,11 +13,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  libserialport: 0.3.0+1
+  libserialport: 0.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:   
+  libserialport:
+    git:
+      url: https://github.com/AndreLuizNogueira/libserialport.dart.git
 
 flutter:
   plugin:

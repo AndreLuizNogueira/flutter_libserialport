@@ -1,5 +1,9 @@
 # Alterações
 
+## 0.5.3
+
+Atualizado libserialport para Suportar Melhor o Android;
+
 ## 0.5.2
 
 Removido import io.flutter.plugin.common.PluginRegistry.Registrar para Corrigir Erro De Build;
