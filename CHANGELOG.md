@@ -1,5 +1,10 @@
 # Alterações
 
+## 0.5.4
+
+* Migração para Built-in Kotlin (Flutter 3.44.0+);
+* Removidas dependências manuais do Kotlin Gradle Plugin e aplicação manual de 'kotlin-android';
+
 ## 0.5.3
 
 Atualizado libserialport para Suportar Melhor o Android;
