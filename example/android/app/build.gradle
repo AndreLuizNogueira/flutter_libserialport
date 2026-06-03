@@ -33,7 +33,7 @@ android {
     defaultConfig {
         applicationId "org.sigrok.flutter_libserialport_example"
         namespace "org.sigrok.flutter_libserialport_example"
-        minSdkVersion 23
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
