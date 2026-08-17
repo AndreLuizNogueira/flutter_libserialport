@@ -34,13 +34,14 @@ class _ExampleAppState extends State<ExampleApp> {
     initPorts();
   }
 
-  void initPorts() {
+  Future<void> initPorts() async {
     List<String> ports = [];
     try {
-      ports = SerialPort.availablePorts;
+      ports = await SerialPort.availablePorts;
     } catch (e) {
       print(e);
     }
+    if (!mounted) return;
     setState(() => availablePorts = ports);
   }
 
@@ -48,31 +49,34 @@ class _ExampleAppState extends State<ExampleApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Serial Port example'),
-        ),
+        appBar: AppBar(title: const Text('Flutter Serial Port example')),
         body: Scrollbar(
           child: ListView(
             children: [
               for (final address in availablePorts)
-                Builder(builder: (context) {
-                  final port = SerialPort(address);
-                  return ExpansionTile(
-                    title: Text(address),
-                    children: [
-                      CardListTile('Description', port.description),
-                      CardListTile('Transport', port.transport.toTransport()),
-                      CardListTile('USB Bus', port.busNumber?.toPadded()),
-                      CardListTile('USB Device', port.deviceNumber?.toPadded()),
-                      CardListTile('Vendor ID', port.vendorId?.toHex()),
-                      CardListTile('Product ID', port.productId?.toHex()),
-                      CardListTile('Manufacturer', port.manufacturer),
-                      CardListTile('Product Name', port.productName),
-                      CardListTile('Serial Number', port.serialNumber),
-                      CardListTile('MAC Address', port.macAddress),
-                    ],
-                  );
-                }),
+                Builder(
+                  builder: (context) {
+                    final port = SerialPort(address);
+                    return ExpansionTile(
+                      title: Text(address),
+                      children: [
+                        CardListTile('Description', port.description),
+                        CardListTile('Transport', port.transport.toTransport()),
+                        CardListTile('USB Bus', port.busNumber?.toPadded()),
+                        CardListTile(
+                          'USB Device',
+                          port.deviceNumber?.toPadded(),
+                        ),
+                        CardListTile('Vendor ID', port.vendorId?.toHex()),
+                        CardListTile('Product ID', port.productId?.toHex()),
+                        CardListTile('Manufacturer', port.manufacturer),
+                        CardListTile('Product Name', port.productName),
+                        CardListTile('Serial Number', port.serialNumber),
+                        CardListTile('MAC Address', port.macAddress),
+                      ],
+                    );
+                  },
+                ),
             ],
           ),
         ),
@@ -94,10 +98,7 @@ class CardListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Text(value ?? 'N/A'),
-        subtitle: Text(name),
-      ),
+      child: ListTile(title: Text(value ?? 'N/A'), subtitle: Text(name)),
     );
   }
 }
