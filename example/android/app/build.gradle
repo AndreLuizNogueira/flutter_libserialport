@@ -23,7 +23,8 @@ if (flutterVersionName == null) {
 }
 
 android {
-    compileSdkVersion 35
+    namespace "org.sigrok.flutter_libserialport_example"
+    compileSdk 37
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -32,9 +33,8 @@ android {
 
     defaultConfig {
         applicationId "org.sigrok.flutter_libserialport_example"
-        namespace "org.sigrok.flutter_libserialport_example"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion 35
+        minSdk flutter.minSdkVersion
+        targetSdk 37
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -52,9 +52,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
-    }
     lint {
         disable 'InvalidPackage'
     }
@@ -62,4 +59,10 @@ android {
 
 flutter {
     source '../..'
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
 }

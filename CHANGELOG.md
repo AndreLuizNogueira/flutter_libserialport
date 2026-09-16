@@ -1,5 +1,14 @@
 # Alterações
 
+## 0.5.5
+
+* Atualizado para Flutter 3.47.4 (Dart 3.13.3), fixado via FVM (.fvmrc);
+* Android: Gradle 8.11.1 -> 9.3.1, AGP 8.2.2/8.7.3 -> 9.1.0, Kotlin 1.9.20 -> 2.4.0;
+* Android: compileSdk/targetSdk 35 -> 36, minSdk 23 -> 24;
+* Android: migrado 'rootProject.buildDir' para 'layout.buildDirectory' (removido no Gradle 9);
+* Android: 'lintOptions' -> 'lint', 'compileSdkVersion' -> 'compileSdk', 'kotlinOptions' -> 'kotlin { compilerOptions }';
+* Android: removido 'android.enableJetifier' (obsoleto) e ajustado org.gradle.jvmargs;
+
 ## 0.5.4
 
 * Migração para Built-in Kotlin (Flutter 3.44.0+);
